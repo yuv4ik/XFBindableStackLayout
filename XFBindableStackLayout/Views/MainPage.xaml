@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XFBindableStackLayout"
+    x:Class="XFBindableStackLayout.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+    <local:BindableStackLayout
+        Title="Colors:"
+        ItemsSource="{Binding MyColors}"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+        <local:BindableStackLayout.ItemDataTemplate>
+            <DataTemplate>
+                <StackLayout
+                    Orientation="Horizontal">
+                    <BoxView
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        Color="{Binding HexCode}" />
+                    <Label
+                        Text="{Binding Name}"
+                        VerticalTextAlignment="Center" />
+                </StackLayout>
+            </DataTemplate>
+        </local:BindableStackLayout.ItemDataTemplate>
+    </local:BindableStackLayout>
+</ContentPage>
