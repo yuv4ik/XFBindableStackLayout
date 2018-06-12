@@ -7,11 +7,12 @@
     <ContentPage.BindingContext>
         <local:MainViewModel />
     </ContentPage.BindingContext>
-    <local:BindableStackLayout
+    <local:BindableStackLayout 
         Title="Colors:"
         ItemsSource="{Binding MyColors}"
         VerticalOptions="Center"
-        HorizontalOptions="Center">
+        HorizontalOptions="Center"
+        SelectedItemChanged="OnSelectedItemChanged">
         <local:BindableStackLayout.ItemDataTemplate>
             <DataTemplate>
                 <StackLayout

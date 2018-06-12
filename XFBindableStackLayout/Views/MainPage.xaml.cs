@@ -13,5 +13,12 @@ namespace XFBindableStackLayout
         {
             InitializeComponent();
         }
+        
+        public void OnSelectedItemChanged(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedItem = (MyColor)e.SelectedItem;
+            System.Diagnostics.Debug.WriteLine(selectedItem.Name);
+
+        }
     }
 }
